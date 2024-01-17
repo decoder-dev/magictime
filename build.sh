@@ -25,7 +25,9 @@ MAGIC_BUILD_DATE=$(date '+%Y-%m-%d_%H-%M-%S')
 
 output_dir=out
 make O="$output_dir" \
-            alioth_defconfig
+            vendor/kona-perf_defconfig \
+            vendor/xiaomi/sm8250-common.config \
+            vendor/xiaomi/alioth.config
 
 make -j $(nproc) \
             O="$output_dir" \
